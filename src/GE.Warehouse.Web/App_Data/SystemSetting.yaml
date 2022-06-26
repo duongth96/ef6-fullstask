@@ -1,0 +1,6 @@
+User: 
+    DefaultRole: Registered
+    DefaultPasswordFormat: 0
+System: 
+    PageSize: 20
+    AllowExtension: '.jpg|.JPG|.jpeg|.JPEG|.bmp|.BMP|.gif|.GIF|.png|.PNG'

@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "e92b243e-6f91-4106-a521-5341d206d437",
+		"name": "GE_Warehouse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "abc",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:44354/api/auth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "44354",
+					"path": [
+						"api",
+						"auth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "warehouse",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "cnDWnLQqrPGGbf96jtiiH80k0X63v4TcOfQPSRu-_3TWWQw23mJs3HOnGHWZ9Lsg-zFFq7OdAh0LACW_eUpWtGQ-w7i7yPfDTYd1V6_4nJ-2_MzyoFHIAWxKKXMgEi0AkvvBPL4r4DUkZiS95BCtGEyBrhhrntRYFt-Ttf07mXnt4TIRq7_PQ3ik7VtnYiuXRJp2-W-JjbB25Tzy_2AI-g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:44354/api/warehouse",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "44354",
+					"path": [
+						"api",
+						"warehouse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "inventory",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Gzr7pUBonCLJKJjyBypx5Nn1SOSoDeGAhpcs4_FpB-GK2r9Se8QhBezgTCv-ErDvxt26HYPdwpyuosGgTkVbQYSyjuy2-zPYBIfaC1OR6Vu6-OO79ElZoDoPmOvPklsYusm2aYVKw2LOI4DL6WWzsd8s8tftOavgzo03QsA58p9iJacKennvKdyK4bFGcXwxlU_gWdFgcCDKsCuTxpUstxAVEYsDVKW_gy8yCkisCBg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"warehouseId\": 1,\r\n    \"items\": [\r\n        {\r\n        \"status\": 1,\r\n        \"qrCode\": \"123\",\r\n        \"Quantity\": 123\r\n        },\r\n        {\r\n        \"status\": 1,\r\n        \"qrCode\": \"1234\",\r\n        \"Quantity\": 123\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:44354/api/inventory",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "44354",
+					"path": [
+						"api",
+						"inventory"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
